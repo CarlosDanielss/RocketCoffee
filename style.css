@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+}
+
+body {
+    background-color: var(--backgrond);
+}
+
+#Header, #content {
+    backdrop-filter: blur(180px);
+}
+
+#Header {
+    display: flex;
+    height: 6.2rem;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.headerContainer {
+    display: flex;
+    height: 3.1rem;
+    width: 57rem;
+    align-items: center;
+    justify-content: space-around;
+
+    animation: View 2s;
+}
+
+#logo,
+a,
+button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text-color);
+    padding: 0.9rem;
+}
+
+a:hover {
+    color: var(--button);
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid var(--button);
+    border-radius: 6px;
+    padding: 0.68rem 2.37rem;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+button:hover {
+    background-color: var(--button);
+}
+
+#content {
+    display: block;
+    margin-top: 4rem;
+}
+
+.contentText {
+    display: block;
+}
+
+.contentText h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: var(--text-color);
+    text-align: center;
+    animation: View 2s;
+}
+
+.contentText h1:nth-child(2) {
+    color: var(--backgrond);
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+    animation: fall 1s;
+}
+
+.contentImages {
+    display: flex;
+    justify-content: center;
+    margin-top: 4.5rem;
+    overflow: hidden;
+}
+
+.contentImages img {
+    animation: fallReverse 1s;
+    width: 59.9rem;
+    height: 30rem;
+}
+
+.blurLeft {
+    background: #996DFF;
+    filter: blur(130px);
+    width: 8rem;
+    height: 8rem;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+    position: absolute;
+
+    animation: MooveLeft 9s infinite;
+    animation-delay: 2s;
+}
+
+.blurRight {
+    width: 8rem;
+    height: 8rem;
+    background: #996DFF;
+    filter: blur(130px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -10;
+
+    animation: MooveRight 9s infinite;
+    animation-delay: 2s;
+}
+
+/*Animações de fundo*/
+
+@keyframes MooveLeft {
+    0% {
+        transform: translateX(0);      
+    }
+    50% {
+        transform: translateX(10rem);
+       
+    }
+    80% {
+        transform: translateY(-34rem);    
+    }
+    100% {
+        transform: translateX(0);
+    } 
+}
+
+@keyframes MooveRight {
+    0% {
+        transform: translateX(0);      
+    }
+    50% {
+        transform: translateX(-10rem);
+       
+    }
+    80% {
+        transform: translateY(34rem);    
+    }
+    100% {
+        transform: translateX(0);
+    } 
+}
+
+/* Animações de entrada */
+
+@keyframes View {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fall {
+    from {
+        opacity: 0;
+        transform: translateY(-7rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fallReverse {
+    from {
+        opacity: 0;
+        transform: translateY(7rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
